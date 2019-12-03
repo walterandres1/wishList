@@ -22,6 +22,7 @@ app.use(morgan("dev"));
 app.use(express.static("public"));
 
 // routes
+app.use(require("./controllers/staticController"));
 
 //sync schema?
 db.sequelize.sync({ force: process.env.NODE_ENV !== "production" })
