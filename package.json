@@ -1,0 +1,33 @@
+{
+  "name": "wishList",
+  "version": "1.0.0",
+  "description": "create a shopping wishlist",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walterandres1/wishList.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walterandres1/wishList/issues"
+  },
+  "homepage": "https://github.com/walterandres1/wishList#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "morgan": "^1.9.1",
+    "mysql2": "^2.0.1",
+    "sequelize": "^5.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1",
+    "sequelize-cli": "^5.5.1"
+  }
+}
