@@ -1,0 +1,21 @@
+
+    <h2>Your list items are here</h2>
+
+    <form action="/list" method="POST">
+    <input type="text" name="name" placeholder="Items">
+    <input type="text" name="name-1" placeholder="price">
+    <input type="text" name="name-2" placeholder="Decription">
+    <input type="text" name="name-3" placeholder="comment">
+    <Input type="submit" value="cart">submit</Input>
+    </form>
+
+    <ul>
+        {{#each items}}
+        <li>{{name}}</li>
+        <li>{{price}}</li>
+        <li>{{decription}}</li>
+        <li>{{comment}}</li>
+        {{else}} 
+        <li>Your cart is empty</li>
+        {{/each}}
+    </ul>
