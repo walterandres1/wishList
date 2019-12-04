@@ -10,6 +10,7 @@ router.get("/login", (req, res) => {
 router.post("/login", (req, res) => {
     db.User.findOne({ where: { email: req.body.email } })
         .then(user => {
+            console.log(user)
             if (!user) {
                 return res.render("auth/login", { error: "Invalid email or password, please try again." });
             }
@@ -30,5 +31,23 @@ router.post("/login", (req, res) => {
 router.get("/register", (req, res) => {
     res.render("auth/register");
 });
+
+router.post("/register", (req, res) => {
+    // console.log("register post")
+
+
+    
+    db.User.create({
+        email: req.body.email,
+        password: req.body.password
+    }).then(user => {
+        console.log(user)
+        res.redirect("/login");
+    }).catch(err => {
+        console.log(err);
+    });
+});
+
+
 
 module.exports = router;
