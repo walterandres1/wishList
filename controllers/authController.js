@@ -10,6 +10,7 @@ router.get("/login", (req, res) => {
 router.post("/login", (req, res) => {
     db.User.findOne({ where: { email: req.body.email } })
         .then(user => {
+            console.log(user)
             if (!user) {
                 return res.render("auth/login", { error: "Invalid email or password, please try again." });
             }
