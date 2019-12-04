@@ -32,4 +32,22 @@ router.get("/register", (req, res) => {
     res.render("auth/register");
 });
 
+router.post("/register", (req, res) => {
+    // console.log("register post")
+
+
+    
+    db.User.create({
+        email: req.body.email,
+        password: req.body.password
+    }).then(user => {
+        console.log(user)
+        res.redirect("/login");
+    }).catch(err => {
+        console.log(err);
+    });
+});
+
+
+
 module.exports = router;
