@@ -3,18 +3,19 @@
 
     <form action="/list" method="POST">
     <input type="text" name="name" placeholder="Items">
-    <input type="text" name="name" placeholder="price">
-    <input type="text" name="name" placeholder="Decription">
-    <input type="text" name="name" placeholder="Add comment">
-    <Input type="submit" value="cart"></Input>
+    <input type="text" name="name-1" placeholder="price">
+    <input type="text" name="name-2" placeholder="Decription">
+    <input type="text" name="name-3" placeholder="comment">
+    <Input type="submit" value="cart">submit</Input>
     </form>
 
     <ul>
         {{#each items}}
         <li>{{name}}</li>
         <li>{{price}}</li>
-        <li>{{Decription}}</li>
-        <li>{{Add comment}}</li>
+        <li>{{decription}}</li>
+        <li>{{comment}}</li>
+        {{else}} 
         <li>Your cart is empty</li>
         {{/each}}
     </ul>
