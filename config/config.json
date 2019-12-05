@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
-    "password": "1Subjecti",
-=======
     "password": "root",
->>>>>>> bc0acc0cfdc51239f08f31629ad359ee4c925810
     "database": "wishmas_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
