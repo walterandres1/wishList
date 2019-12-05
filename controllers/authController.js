@@ -36,7 +36,7 @@ router.post("/register", (req, res) => {
     // console.log("register post")
 
 
-    
+
     db.User.create({
         email: req.body.email,
         password: req.body.password
