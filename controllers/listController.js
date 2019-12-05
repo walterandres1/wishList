@@ -7,17 +7,33 @@ router.get("/list", (req, res) => {
 
 
 
-    db.Wish.findAll({})
+    // db.Wish.findAll({})
+    //     .then(items => {
+    //         res.render("data/list", {
+    //             items: items
+    //         });
+    //     })
+    //     .catch(err => {
+    //         console.log(err);
+    //         res.status(500).end();
+    //     });
+    
+    console.log(req.session)
+    if (!req.session.userId) {
+        return res.redirect("/");
+      }
+    
+      db.Wish.findAll({ where: { UserId: req.session.userId } })
         .then(items => {
-            res.render("data/list", {
-                items: items
-            });
+          res.render("data/list", {
+            user: req.user,
+            items: items
+          });
         })
         .catch(err => {
-            console.log(err);
-            res.status(500).end();
+          console.log(err);
+          res.status(500).end();
         });
-
 
 });
 
@@ -29,7 +45,8 @@ router.post("/list", (req, res) => {
         name: req.body.name,
         price: req.body.price,
         category: req.body.category,
-        description: req.body.description
+        description: req.body.description,
+        UserId: req.session.userId
     }).then(wish => {
         console.log(wish);
         res.redirect("/list");
