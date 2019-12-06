@@ -1,1 +1,25 @@
-<div>hello</div>
+
+    <h2>Your list items are here</h2>
+
+    <form action="/list" method="POST">
+    <input type="text" name="name" placeholder="Items" >
+    <input type="text" name="price" placeholder="price">
+    <input type="text" name="category" placeholder="category">
+    <input type="text" name="description" placeholder="description">
+    <Input type="submit" value ="submit">
+    </form>
+
+
+    <table>
+        {{#each items }}
+        <tr>
+        <th>{{name}}</th>
+        <th>{{price}}</th>
+        <th>{{category}}</th>
+        <th>{{description}}</th>
+        {{else}} 
+        <li class="empty-cart" style="color: red ;">Your cart is empty</li>
+        </tr>
+        {{/each}}
+    </table>
+    
