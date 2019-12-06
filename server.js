@@ -23,7 +23,7 @@ app.use(session({
 
 
 //static assets
-app.use(express.static("public"));
+app.use(express.static("Public"));
 
 // routes
 app.use(require("./controllers/staticController"));
